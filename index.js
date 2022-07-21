@@ -1,7 +1,19 @@
 function fetchBooks() {
   // To pass the tests, don't forget to return your fetch!
-  
+  return fetch("https://anapioficeandfire.com/api/books")
+  .then((response) => response.json())
+  .then((response) => renderBooks(response))
+  //.then((bookData) => bookData.forEach(json => renderBooks(json)));
+  // return renderBooks(json);
 }
+
+// function getGithubOrgs(url) {
+//   return fetch(url).then((response) => response.json());
+// }
+
+// getGithubOrgs("https://api.github.com/users/deekshasharma/orgs").then((res) =>
+//   console.log(res)
+// );
 
 function renderBooks(books) {
   const main = document.querySelector('main');
